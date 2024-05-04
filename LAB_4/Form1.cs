@@ -32,5 +32,34 @@ namespace LAB_4
         {
 
         }
+
+        //Thắng
+        //Thêm, Sửa, Xóa Nhân Viên
+
+        //Xý lý combo box
+        private void fill_combobox_PB()
+        {
+            try
+            {
+                connection.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter("Select * from PHONG_BAN", connection);
+                DataTable table = new DataTable();
+                table.Clear();
+                adapter.Fill(table);
+                cbPhongBan.DisplayMember = "TenPB";
+                cbPhongBan.ValueMember = "MaPB";
+                cbPhongBan.DataSource = table;
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+        }
     }
 }
