@@ -14,6 +14,7 @@ namespace LAB_4
     public partial class Form1 : Form
     {
         //Nghiêm
+        //new push
         private string connectionString = "Data Source=11112001NGHIEM\\NGHIEMXUAN;Initial Catalog=DBMS;Integrated Security=True";
         private SqlConnection connection;
         private SqlCommand command;
