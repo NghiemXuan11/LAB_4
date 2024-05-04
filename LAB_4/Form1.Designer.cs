@@ -222,7 +222,7 @@
             this.groupBox5.Controls.Add(this.label10);
             this.groupBox5.Controls.Add(this.label9);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(9, 57);
+            this.groupBox5.Location = new System.Drawing.Point(9, 52);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(388, 118);
             this.groupBox5.TabIndex = 12;
