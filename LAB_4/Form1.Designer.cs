@@ -471,6 +471,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).EndInit();
             this.groupBox5.ResumeLayout(false);
