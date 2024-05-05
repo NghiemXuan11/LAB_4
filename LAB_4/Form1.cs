@@ -14,7 +14,9 @@ namespace LAB_4
     public partial class Form1 : Form
     {
         //Nghiêm
-        //new push
+        //Khởi tạo kết nối với Database
+        //Load form
+        //Xử lý chức năng làm mới
         private string connectionString = "Data Source=11112001NGHIEM\\NGHIEMXUAN;Initial Catalog=DBMS;Integrated Security=True";
         private SqlConnection connection;
         private SqlCommand command;
@@ -32,10 +34,19 @@ namespace LAB_4
         {
 
         }
+        //Sâm
+        //Thêm, Sửa, Xóa Phòng Ban
+        //Thêm hàm clear(), load_child() (xử lý chức năng show thành viên con tương ứng
+        //với 1 dòng bên bảng cha
+
+
 
         //Thắng
         //Thêm, Sửa, Xóa Nhân Viên
 
+
+
+        //Nghiêm
         //Xý lý combo box
         private void fill_combobox_PB()
         {
