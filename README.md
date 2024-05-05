@@ -4,7 +4,8 @@ Xây dựng ứng dụng với Winform (C#) để hiện thực hóa các thao t
 
 ## Mô tả 
 
-hiện thực một giao diện trên phần mềm lập trình (sử dụng Python hoặc C#) để người dùng có thể THÊM MỚI, CHỈNH SỬA hoặc XÓA dữ liệu từ 2 thực thể ở phần đặc tả. Lưu ý rằng, khi xóa thực thể CHA (phía quan hệ MỘT), các phần tử bên thực thể N cũng sẽ bị xóa theo.
+Hiện thực một giao diện trên phần mềm lập trình (sử dụng Python hoặc C#) để người dùng có thể THÊM MỚI, CHỈNH SỬA hoặc XÓA dữ liệu từ 2 thực thể ở phần đặc tả. 
+Lưu ý rằng, khi xóa thực thể CHA (phía quan hệ MỘT), các phần tử bên thực thể N cũng sẽ bị xóa theo.
 
 ## Getting Started
 
