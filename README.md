@@ -28,10 +28,10 @@ Lưu ý rằng, khi xóa thực thể CHA (phía quan hệ MỘT), các phần t
 
 ## Thành viên nhóm
 
-Nguyễn Trương Xuân Nghiêm - MSSV: 2151010246
-[@DomPizzie](https://twitter.com/dompizzie)
-Nguyễn Hoàng Thắng - MSSV
-[@DomPizzie](https://twitter.com/dompizzie)
-Tiển Chí Sâm - MSSV
+Nguyễn Trương Xuân Nghiêm - MSSV: 2151010246<br>
+[@DomPizzie](https://twitter.com/dompizzie)<br>
+Nguyễn Hoàng Thắng - MSSV<br>
+[@DomPizzie](https://twitter.com/dompizzie)<br>
+Tiển Chí Sâm - MSSV<br>
 [@DomPizzie](https://twitter.com/dompizzie)
 
