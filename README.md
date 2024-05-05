@@ -29,9 +29,9 @@ Lưu ý rằng, khi xóa thực thể CHA (phía quan hệ MỘT), các phần t
 ## Thành viên nhóm
 
 Nguyễn Trương Xuân Nghiêm - MSSV: 2151010246<br>
-[@DomPizzie](https://twitter.com/dompizzie)<br>
+[@NghiemXuan11](https://github.com/NghiemXuan11)<br>
 Nguyễn Hoàng Thắng - MSSV<br>
-[@DomPizzie](https://twitter.com/dompizzie)<br>
+[@hoangthang0403](https://github.com/hoangthang0403?fbclid=IwZXh0bgNhZW0CMTAAAR10SY6hmieahgEarEfr6HLPP24F_bMPWArejaMzTOg8orxcxgH8x-V6aTY_aem_ASiH7RVBKdy5jd4W4i6ClX6_KGTN1f7dtVsOUnQ_0SGT-URk3NC8NT0JPg1Bi6mFycPOmchAldqaZ59r0JAWo9eV)<br>
 Tiển Chí Sâm - MSSV<br>
-[@DomPizzie](https://twitter.com/dompizzie)
+[@SamCh1](https://twitter.com/dompizzie)
 
