@@ -28,7 +28,7 @@ Lưu ý rằng, khi xóa thực thể CHA (phía quan hệ MỘT), các phần t
 
 ## Thành viên nhóm
 
-Nguyễn Trương Xuân Nghiêm - MSSV: 2151010246<br>
+Nguyễn Trương Xuân Nghiêm - MSSV: 2151010246
 * Github: [@NghiemXuan11](https://github.com/NghiemXuan11)<br>
 Nguyễn Hoàng Thắng - MSSV<br>
 * Github: [@hoangthang0403](https://github.com/hoangthang0403)<br>
