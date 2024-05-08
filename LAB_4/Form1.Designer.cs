@@ -124,16 +124,16 @@
             // 
             this.cbPhongBan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPhongBan.FormattingEnabled = true;
-            this.cbPhongBan.Location = new System.Drawing.Point(150, 168);
+            this.cbPhongBan.Location = new System.Drawing.Point(156, 168);
             this.cbPhongBan.Name = "cbPhongBan";
-            this.cbPhongBan.Size = new System.Drawing.Size(339, 28);
+            this.cbPhongBan.Size = new System.Drawing.Size(353, 28);
             this.cbPhongBan.TabIndex = 7;
             // 
             // txtChucVu
             // 
-            this.txtChucVu.Location = new System.Drawing.Point(150, 133);
+            this.txtChucVu.Location = new System.Drawing.Point(156, 133);
             this.txtChucVu.Name = "txtChucVu";
-            this.txtChucVu.Size = new System.Drawing.Size(339, 27);
+            this.txtChucVu.Size = new System.Drawing.Size(353, 27);
             this.txtChucVu.TabIndex = 6;
             // 
             // dgvNV
@@ -147,12 +147,13 @@
             this.dgvNV.RowTemplate.Height = 24;
             this.dgvNV.Size = new System.Drawing.Size(556, 327);
             this.dgvNV.TabIndex = 5;
+            this.dgvNV.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvNV_CellMouseClick);
             // 
             // txtDienThoaiNV
             // 
-            this.txtDienThoaiNV.Location = new System.Drawing.Point(150, 98);
+            this.txtDienThoaiNV.Location = new System.Drawing.Point(156, 98);
             this.txtDienThoaiNV.Name = "txtDienThoaiNV";
-            this.txtDienThoaiNV.Size = new System.Drawing.Size(339, 27);
+            this.txtDienThoaiNV.Size = new System.Drawing.Size(353, 27);
             this.txtDienThoaiNV.TabIndex = 3;
             // 
             // label2
@@ -168,16 +169,16 @@
             // 
             // txtDiaChiNV
             // 
-            this.txtDiaChiNV.Location = new System.Drawing.Point(150, 63);
+            this.txtDiaChiNV.Location = new System.Drawing.Point(156, 63);
             this.txtDiaChiNV.Name = "txtDiaChiNV";
-            this.txtDiaChiNV.Size = new System.Drawing.Size(339, 27);
+            this.txtDiaChiNV.Size = new System.Drawing.Size(353, 27);
             this.txtDiaChiNV.TabIndex = 3;
             // 
             // txtTenNV
             // 
-            this.txtTenNV.Location = new System.Drawing.Point(150, 28);
+            this.txtTenNV.Location = new System.Drawing.Point(156, 28);
             this.txtTenNV.Name = "txtTenNV";
-            this.txtTenNV.Size = new System.Drawing.Size(339, 27);
+            this.txtTenNV.Size = new System.Drawing.Size(353, 27);
             this.txtTenNV.TabIndex = 3;
             // 
             // btnXoaNV
@@ -280,6 +281,7 @@
             this.btnLamMoi.TabIndex = 6;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = true;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // groupBox4
             // 
@@ -373,23 +375,23 @@
             // 
             // txtDiaChiPB
             // 
-            this.txtDiaChiPB.Location = new System.Drawing.Point(138, 127);
+            this.txtDiaChiPB.Location = new System.Drawing.Point(155, 127);
             this.txtDiaChiPB.Name = "txtDiaChiPB";
-            this.txtDiaChiPB.Size = new System.Drawing.Size(339, 27);
+            this.txtDiaChiPB.Size = new System.Drawing.Size(349, 27);
             this.txtDiaChiPB.TabIndex = 3;
             // 
             // txtDienThoaiPB
             // 
-            this.txtDienThoaiPB.Location = new System.Drawing.Point(138, 82);
+            this.txtDienThoaiPB.Location = new System.Drawing.Point(155, 82);
             this.txtDienThoaiPB.Name = "txtDienThoaiPB";
-            this.txtDienThoaiPB.Size = new System.Drawing.Size(339, 27);
+            this.txtDienThoaiPB.Size = new System.Drawing.Size(349, 27);
             this.txtDienThoaiPB.TabIndex = 3;
             // 
             // txtTenPB
             // 
-            this.txtTenPB.Location = new System.Drawing.Point(138, 37);
+            this.txtTenPB.Location = new System.Drawing.Point(155, 37);
             this.txtTenPB.Name = "txtTenPB";
-            this.txtTenPB.Size = new System.Drawing.Size(339, 27);
+            this.txtTenPB.Size = new System.Drawing.Size(349, 27);
             this.txtTenPB.TabIndex = 3;
             // 
             // dgvPB
@@ -403,6 +405,7 @@
             this.dgvPB.RowTemplate.Height = 24;
             this.dgvPB.Size = new System.Drawing.Size(556, 327);
             this.dgvPB.TabIndex = 2;
+            this.dgvPB.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPB_CellMouseClick);
             // 
             // groupBox1
             // 
@@ -470,6 +473,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox3.ResumeLayout(false);

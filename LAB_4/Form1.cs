@@ -16,7 +16,9 @@ namespace LAB_4
         //Nghiêm
         //Khởi tạo kết nối với Database
         //Load form
-        //Xử lý chức năng làm mới
+        //Show danh sách nhân viên thuộc 1 phòng ban
+        //Thêm chức năng cho button làm mới.(hàm clear)
+        //Xử lý sự kiện khi click 1 dòng dữ liệu trên datagridview
         private string connectionString = "Data Source=11112001NGHIEM\\NGHIEMXUAN;Initial Catalog=DBMS;Integrated Security=True";
         private SqlConnection connection;
         private SqlCommand command;
@@ -32,21 +34,102 @@ namespace LAB_4
         
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Khoi tao ket noi va tao cac Adapter
+            connection = new SqlConnection(connectionString);
+            phongBanAdapter = new SqlDataAdapter("Select * from PHONG_BAN", connection);
+            nhanVienAdapter = new SqlDataAdapter("Select * from NHAN_VIEN", connection);
 
+            //Tạo DataSet và điền dữ liệu từ cơ sở dữ liệu vào DataSet
+            dataSet = new DataSet();
+            phongBanAdapter.Fill(dataSet, "PHONG_BAN");
+            nhanVienAdapter.Fill(dataSet, "NHAN_VIEN");
+
+            //Tạo DataRelation giữa PHONG_BAN và NHAN_VIEN
+            DataRelation relation = new DataRelation("PhongBan_NhanVien", dataSet.Tables["PHONG_BAN"].Columns["MaPB"], dataSet.Tables["NHAN_VIEN"].Columns["PhongBanID"]);
+            dataSet.Relations.Add(relation);
+
+            //Bind du lieu vao DataGridView
+            dgvPB.DataSource = dataSet.Tables["PHONG_BAN"];
+            dgvNV.DataSource = dataSet.Tables["NHAN_VIEN"];
+
+            fill_combobox_PB();
+            clear();
         }
+        private void clear()
+        {
+            txtTenPB.Text = "";
+            txtDienThoaiPB.Text = "";
+            txtDiaChiPB.Text = "";
+
+            txtTenNV.Text = "";
+            txtDiaChiNV.Text = "";
+            txtDienThoaiNV.Text = "";
+            txtChucVu.Text = "";
+
+            idPB = "";
+            idNV = "";
+        }
+
+        //Show danh sách nhân viên thuộc 1 phòng ban
+        private void loadChildData(int rowIndex)
+        {
+            var parentRow = dataSet.Tables["PHONG_BAN"].Rows[rowIndex];
+            var childRows = parentRow.GetChildRows("PhongBan_NhanVien");
+            DataTable childTable = dataSet.Tables["NHAN_VIEN"].Clone();
+            foreach (var row in childRows)
+            {
+                childTable.ImportRow(row);
+            }
+            dgvNV.DataSource = childTable;
+        }
+        //Xử lý sự kiện khi click 1 dòng dữ liệu trên bảng Phòng ban
+        private void dgvPB_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            idPB = dgvPB.CurrentRow.Cells[0].Value.ToString();
+            txtTenPB.Text = dgvPB.CurrentRow.Cells[1].Value.ToString();
+            txtDienThoaiPB.Text = dgvPB.CurrentRow.Cells[2].Value.ToString();
+            txtDiaChiPB.Text = dgvPB.CurrentRow.Cells[3].Value.ToString();
+            //Hàm thực hiện chức năng Show danh sách nhân viên thuộc 1 phòng ban
+            loadChildData(dgvPB.CurrentRow.Index);
+        }
+        //Xử lý sự kiện khi click 1 dòng dữ liệu trên bảng Nhân viên
+        private void dgvNV_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            idNV = dgvNV.CurrentRow.Cells[0].Value.ToString();
+            txtTenNV.Text = dgvNV.CurrentRow.Cells[1].Value.ToString();
+            txtDiaChiNV.Text = dgvNV.CurrentRow.Cells[2].Value.ToString();
+            txtDienThoaiNV.Text = dgvNV.CurrentRow.Cells[3].Value.ToString();
+            txtChucVu.Text = dgvNV.CurrentRow.Cells[4].Value.ToString();
+            cbPhongBan.SelectedValue = dgvNV.CurrentRow.Cells[5].Value.ToString();
+        }
+        //Chức năng làm mới
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            Form1_Load(sender, e);
+        }
+
+
+
+        //=======================================================================================//
         //Sâm
+        //Thiết kế giao diện form
         //Thêm, Sửa, Xóa Phòng Ban
-        //Thêm hàm clear(), load_child() (xử lý chức năng show thành viên con tương ứng
-        //với 1 dòng bên bảng cha
 
 
 
+
+
+
+
+        //=======================================================================================//
         //Thắng
         //Thêm, Sửa, Xóa Nhân Viên
+        //Xử lý combo box
 
 
 
-        //Nghiêm
+
+
         //Xý lý combo box
         private void fill_combobox_PB()
         {
