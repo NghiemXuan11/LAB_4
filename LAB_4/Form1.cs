@@ -183,5 +183,35 @@ namespace LAB_4
             }
         }
 
+        //=======================================================================================//
+        //Sâm
+        //Thiết kế giao diện form
+        //Thêm, Sửa, Xóa Phòng Ban
+
+
+        //Thêm thông tin phòng ban
+        private void btnThemPB_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                command = new SqlCommand("Insert into PHONG_BAN values (@TenPB, @SoDienThoaiPB,@DiaChiPB)", connection);
+                command.Parameters.AddWithValue("@TenPB", txtTenPB.Text);
+                command.Parameters.AddWithValue("@SoDienThoaiPB", txtDienThoaiPB.Text);
+                command.Parameters.AddWithValue("@DiaChiPB", txtDiaChiPB.Text);
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+                MessageBox.Show("Thêm thành công");
+                Form1_Load(sender, e);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
 }
