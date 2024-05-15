@@ -18,8 +18,10 @@ Lưu ý rằng, khi xóa thực thể CHA (phía quan hệ MỘT), các phần t
 
 ### Cài đặt
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+* Bước 1: Clone Project về máy
+* Bước 2: Chạy file query data.sql khởi tạo Database
+* Bước 3: Tại dòng lệnh chứa chuối connection String đổi tên Server thành tên máy cá nhân.
+* Bước 4: Thực thi và thử nghiệm các chức năng
 
 ### Thực thi chương trình
 
@@ -30,8 +32,8 @@ Lưu ý rằng, khi xóa thực thể CHA (phía quan hệ MỘT), các phần t
 
 * Nguyễn Trương Xuân Nghiêm - MSSV: 2151010246<br>
 Github: [@NghiemXuan11](https://github.com/NghiemXuan11)<br>
-* Nguyễn Hoàng Thắng - MSSV<br>
+* Nguyễn Hoàng Thắng - MSSV: 2151012009<br>
 Github: [@hoangthang0403](https://github.com/hoangthang0403)<br>
-* Tiển Chí Sâm - MSSV<br>
+* Tiển Chí Sâm - MSSV: 2151010319<br>
 Github: [@SamCh1](https://github.com/SamCh1)
 
