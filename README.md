@@ -22,18 +22,20 @@ Công ty A cần lưu thông tin của PHÒNG BAN (bao gồm mã phòng ban, Tê
 
 ### Cài đặt
 
-* Bước 1: Clone Project về máy
-* Bước 2: Chạy file query data.sql khởi tạo Database
-* Bước 3: Tại dòng lệnh chứa chuối connection String đổi tên Server thành tên máy cá nhân.
-* Bước 4: Thực thi và thử nghiệm các chức năng
+* Bước 1: Clone Project về máy.
+* Bước 2: Chạy file query data.sql khởi tạo Database.
+* Bước 3: Tại dòng lệnh chứa chuối connection String trong source code đổi tên Server thành tên máy cá nhân.
+* Bước 4: Thực thi và thử nghiệm các chức năng.
 
 ### Thực thi chương trình
 
 * Trên màn hình giao diện sẽ bao gồm các chức năng sau:<br>
-  Thêm, sửa, xóa phòng ban<br>
-  Thêm, sửa, xoa nhân viên<br>
-* Step-by-step bullets
-
+  - Thêm, sửa, xóa phòng ban.<br>
+  - Thêm, sửa, xoa nhân viên.<br>
+  - Show toàn bộ nhân viên thuộc 1 phòng ban khi click vào dòng dữ liệu bảng phòng ban.<br>
+  - Show phòng ban mà nhân viên bất kì thuộc về khi click vào dòng dữ liệu bảng nhân viên.<br>
+  - Chức năng làm mới (Refresh) giúp thiết lập dữ liệu về trạng thái ban đầu.<br>
+  
 ## Thành viên nhóm
 
 * Nguyễn Trương Xuân Nghiêm - MSSV: 2151010246<br>
