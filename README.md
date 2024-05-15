@@ -7,6 +7,10 @@ Xây dựng ứng dụng với Winform (C#) để hiện thực hóa các thao t
 Hiện thực một giao diện trên phần mềm lập trình (sử dụng Python hoặc C#) để người dùng có thể THÊM MỚI, CHỈNH SỬA hoặc XÓA dữ liệu từ 2 thực thể ở phần đặc tả.<br>
 Lưu ý rằng, khi xóa thực thể CHA (phía quan hệ MỘT), các phần tử bên thực thể N cũng sẽ bị xóa theo.
 
+## Đặc tả yêu cầu
+
+Công ty A cần lưu thông tin của PHÒNG BAN (bao gồm mã phòng ban, Tên phòng ban, số điện thoại liên hệ, địa điểm) và các NHÂN VIÊN làm việc trong phòng ban đó (thông tin của nhân viên bao gồm mã nhân viên, Họ và Tên, Địa chỉ, Số ĐT liên hệ, Chức vụ). Mỗi NHÂN VIÊN chỉ làm việc cho MỘT PHÒNG BAN, một PHÒNG BAN bao gồm nhiều NHÂN VIÊN.
+
 ## Chi tiết
 
 ### Công cụ sử dụng
@@ -25,7 +29,9 @@ Lưu ý rằng, khi xóa thực thể CHA (phía quan hệ MỘT), các phần t
 
 ### Thực thi chương trình
 
-* How to run the program
+* Trên màn hình giao diện sẽ bao gồm các chức năng sau:<br>
+  Thêm, sửa, xóa phòng ban<br>
+  Thêm, sửa, xoa nhân viên<br>
 * Step-by-step bullets
 
 ## Thành viên nhóm
