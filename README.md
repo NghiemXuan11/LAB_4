@@ -9,7 +9,7 @@ Lưu ý rằng, khi xóa thực thể CHA (phía quan hệ MỘT), các phần t
 
 ## Đặc tả yêu cầu
 
-Công ty A cần lưu thông tin của PHÒNG BAN (bao gồm mã phòng ban, Tên phòng ban, số điện thoại liên hệ, địa điểm) và các NHÂN VIÊN làm việc trong phòng ban đó (thông tin của nhân viên bao gồm mã nhân viên, Họ và Tên, Địa chỉ, Số ĐT liên hệ, Chức vụ). Mỗi NHÂN VIÊN chỉ làm việc cho MỘT PHÒNG BAN, một PHÒNG BAN bao gồm nhiều NHÂN VIÊN.
+Công ty A cần lưu thông tin của PHÒNG BAN (bao gồm mã phòng ban, Tên phòng ban, số điện thoại liên hệ, địa chỉ) và các NHÂN VIÊN làm việc trong phòng ban đó (thông tin của nhân viên bao gồm mã nhân viên, Họ và Tên, Địa chỉ, Số điện thoại liên hệ, Chức vụ). Mỗi NHÂN VIÊN chỉ làm việc cho MỘT PHÒNG BAN, một PHÒNG BAN bao gồm nhiều NHÂN VIÊN.
 
 ## Chi tiết
 
