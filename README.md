@@ -23,7 +23,7 @@ Công ty A cần lưu thông tin của PHÒNG BAN (bao gồm mã phòng ban, Tê
 ### Cài đặt
 
 * Bước 1: Clone Project về máy.
-* Bước 2: Chạy file query data.sql khởi tạo Database.
+* Bước 2: Chạy file query DATA.sql khởi tạo Database.
 * Bước 3: Tại dòng lệnh chứa chuối connection String trong source code đổi tên Server thành tên máy cá nhân.
 * Bước 4: Thực thi và thử nghiệm các chức năng.
 
