@@ -36,8 +36,8 @@ namespace LAB_4
         {
             //Khoi tao ket noi va tao cac Adapter
             connection = new SqlConnection(connectionString);
-            phongBanAdapter = new SqlDataAdapter("Select * from PHONG_BAN", connection);
-            nhanVienAdapter = new SqlDataAdapter("Select * from NHAN_VIEN", connection);
+            phongBanAdapter = new SqlDataAdapter("Select MaPB as [Mã PB], TenPB as [Tên PB], SoDienThoaiPB as [SĐT], DiaChiPB as [Địa Chỉ] from PHONG_BAN", connection);
+            nhanVienAdapter = new SqlDataAdapter("Select MaNV as [Mã NV], TenNV as [Tên NV], DiaChiNV as [Địa chỉ],  SoDienThoaiNV as [SĐT], ChucVuNV as [Chức Vụ], PhongBanID as [PB_ID] from NHAN_VIEN", connection);
 
             //Tạo DataSet và điền dữ liệu từ cơ sở dữ liệu vào DataSet
             dataSet = new DataSet();
@@ -45,7 +45,7 @@ namespace LAB_4
             nhanVienAdapter.Fill(dataSet, "NHAN_VIEN");
 
             //Tạo DataRelation giữa PHONG_BAN và NHAN_VIEN
-            DataRelation relation = new DataRelation("PhongBan_NhanVien", dataSet.Tables["PHONG_BAN"].Columns["MaPB"], dataSet.Tables["NHAN_VIEN"].Columns["PhongBanID"]);
+            DataRelation relation = new DataRelation("PhongBan_NhanVien", dataSet.Tables["PHONG_BAN"].Columns["Mã PB"], dataSet.Tables["NHAN_VIEN"].Columns["PB_ID"]);
             dataSet.Relations.Add(relation);
 
             //Bind du lieu vao DataGridView
