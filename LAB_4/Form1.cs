@@ -85,22 +85,61 @@ namespace LAB_4
         //Xử lý sự kiện khi click 1 dòng dữ liệu trên bảng Phòng ban
         private void dgvPB_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            idPB = dgvPB.CurrentRow.Cells[0].Value.ToString();
-            txtTenPB.Text = dgvPB.CurrentRow.Cells[1].Value.ToString();
-            txtDienThoaiPB.Text = dgvPB.CurrentRow.Cells[2].Value.ToString();
-            txtDiaChiPB.Text = dgvPB.CurrentRow.Cells[3].Value.ToString();
-            //Hàm thực hiện chức năng Show danh sách nhân viên thuộc 1 phòng ban
-            loadChildData(dgvPB.CurrentRow.Index);
+            try
+            {
+                idPB = dgvPB.CurrentRow.Cells[0].Value.ToString();
+                txtTenPB.Text = dgvPB.CurrentRow.Cells[1].Value.ToString();
+                txtDienThoaiPB.Text = dgvPB.CurrentRow.Cells[2].Value.ToString();
+                txtDiaChiPB.Text = dgvPB.CurrentRow.Cells[3].Value.ToString();
+                //Hàm thực hiện chức năng Show danh sách nhân viên thuộc 1 phòng ban
+                loadChildData(dgvPB.CurrentRow.Index);
+            }
+            catch(Exception ex) 
+            {
+                MessageBox.Show("Chọn dòng không hợp lệ!");
+            }
         }
         //Xử lý sự kiện khi click 1 dòng dữ liệu trên bảng Nhân viên
         private void dgvNV_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            idNV = dgvNV.CurrentRow.Cells[0].Value.ToString();
-            txtTenNV.Text = dgvNV.CurrentRow.Cells[1].Value.ToString();
-            txtDiaChiNV.Text = dgvNV.CurrentRow.Cells[2].Value.ToString();
-            txtDienThoaiNV.Text = dgvNV.CurrentRow.Cells[3].Value.ToString();
-            txtChucVu.Text = dgvNV.CurrentRow.Cells[4].Value.ToString();
-            cbPhongBan.SelectedValue = dgvNV.CurrentRow.Cells[5].Value.ToString();
+            try
+            {
+                idNV = dgvNV.CurrentRow.Cells[0].Value.ToString();
+                txtTenNV.Text = dgvNV.CurrentRow.Cells[1].Value.ToString();
+                txtDiaChiNV.Text = dgvNV.CurrentRow.Cells[2].Value.ToString();
+                txtDienThoaiNV.Text = dgvNV.CurrentRow.Cells[3].Value.ToString();
+                txtChucVu.Text = dgvNV.CurrentRow.Cells[4].Value.ToString();
+                cbPhongBan.SelectedValue = dgvNV.CurrentRow.Cells[5].Value.ToString();
+
+                // Show the corresponding record in PHONG_BAN
+                DataRow[] parentRows = dataSet.Tables["PHONG_BAN"].Select($"[Mã PB] = '{cbPhongBan.SelectedValue}'");
+                if (parentRows.Length > 0)
+                {
+                    idPB = parentRows[0]["Mã PB"].ToString();
+                    txtTenPB.Text = parentRows[0]["Tên PB"].ToString();
+                    txtDienThoaiPB.Text = parentRows[0]["SĐT"].ToString();
+                    txtDiaChiPB.Text = parentRows[0]["Địa Chỉ"].ToString();
+                }
+                if (parentRows.Length > 0)
+                {
+                    DataTable tempTable = new DataTable();
+                    tempTable.Columns.Add("Mã PB", typeof(string));
+                    tempTable.Columns.Add("Tên PB", typeof(string));
+                    tempTable.Columns.Add("SĐT", typeof(string));
+                    tempTable.Columns.Add("Địa Chỉ", typeof(string));
+
+                    foreach (DataRow row in parentRows)
+                    {
+                        tempTable.Rows.Add(row["Mã PB"], row["Tên PB"], row["SĐT"], row["Địa Chỉ"]);
+                    }
+
+                    dgvPB.DataSource = tempTable;
+                }
+            }
+            catch(Exception ex) 
+            {
+                MessageBox.Show("Chọn dòng không hợp lệ!");
+            }
         }
         //Chức năng làm mới
         private void btnLamMoi_Click(object sender, EventArgs e)
