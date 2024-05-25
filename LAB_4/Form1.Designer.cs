@@ -63,6 +63,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.cbSearchPB = new System.Windows.Forms.ComboBox();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).BeginInit();
             this.groupBox5.SuspendLayout();
@@ -70,15 +74,17 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPB)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox3.Controls.Add(this.btnXoaPB);
             this.groupBox3.Controls.Add(this.btnSuaPB);
             this.groupBox3.Controls.Add(this.btnThemPB);
-            this.groupBox3.Location = new System.Drawing.Point(11, 737);
+            this.groupBox3.Location = new System.Drawing.Point(33, 807);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -149,7 +155,7 @@
             this.dgvNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNV.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvNV.Location = new System.Drawing.Point(3, 215);
+            this.dgvNV.Location = new System.Drawing.Point(3, 308);
             this.dgvNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvNV.Name = "dgvNV";
             this.dgvNV.RowHeadersWidth = 51;
@@ -292,8 +298,8 @@
             // 
             // btnLamMoi
             // 
-            this.btnLamMoi.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnLamMoi.Location = new System.Drawing.Point(525, 743);
+            this.btnLamMoi.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLamMoi.Location = new System.Drawing.Point(640, 815);
             this.btnLamMoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(99, 60);
@@ -304,11 +310,11 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox4.Controls.Add(this.btnXoaNV);
             this.groupBox4.Controls.Add(this.btnSuaNV);
             this.groupBox4.Controls.Add(this.btnThemNV);
-            this.groupBox4.Location = new System.Drawing.Point(649, 737);
+            this.groupBox4.Location = new System.Drawing.Point(845, 807);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -347,6 +353,7 @@
             // groupBox2
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.groupBox2.Controls.Add(this.groupBox7);
             this.groupBox2.Controls.Add(this.cbPhongBan);
             this.groupBox2.Controls.Add(this.txtChucVu);
             this.groupBox2.Controls.Add(this.dgvNV);
@@ -360,14 +367,15 @@
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(583, 190);
+            this.groupBox2.Location = new System.Drawing.Point(813, 147);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(560, 544);
+            this.groupBox2.Size = new System.Drawing.Size(560, 637);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách Nhân Viên";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label13
             // 
@@ -418,18 +426,19 @@
             this.dgvPB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPB.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvPB.Location = new System.Drawing.Point(3, 215);
+            this.dgvPB.Location = new System.Drawing.Point(3, 264);
             this.dgvPB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvPB.Name = "dgvPB";
             this.dgvPB.RowHeadersWidth = 51;
             this.dgvPB.RowTemplate.Height = 24;
-            this.dgvPB.Size = new System.Drawing.Size(554, 327);
+            this.dgvPB.Size = new System.Drawing.Size(584, 327);
             this.dgvPB.TabIndex = 2;
             this.dgvPB.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPB_CellMouseClick);
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.groupBox1.Controls.Add(this.groupBox6);
             this.groupBox1.Controls.Add(this.txtDiaChiPB);
             this.groupBox1.Controls.Add(this.txtDienThoaiPB);
             this.groupBox1.Controls.Add(this.txtTenPB);
@@ -438,11 +447,11 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(9, 190);
+            this.groupBox1.Location = new System.Drawing.Point(9, 191);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(560, 544);
+            this.groupBox1.Size = new System.Drawing.Size(590, 593);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách Phòng Ban";
@@ -477,11 +486,50 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Số điện thoại:";
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.txtSearch);
+            this.groupBox6.Location = new System.Drawing.Point(12, 171);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(504, 68);
+            this.groupBox6.TabIndex = 4;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Tìm kiếm Phòng Ban";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(12, 27);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(480, 27);
+            this.txtSearch.TabIndex = 0;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged_1);
+            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
+            this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.cbSearchPB);
+            this.groupBox7.Location = new System.Drawing.Point(12, 215);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(497, 68);
+            this.groupBox7.TabIndex = 8;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Lọc Nhân Viên theo Phòng Ban";
+            // 
+            // cbSearchPB
+            // 
+            this.cbSearchPB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSearchPB.FormattingEnabled = true;
+            this.cbSearchPB.Location = new System.Drawing.Point(20, 27);
+            this.cbSearchPB.Name = "cbSearchPB";
+            this.cbSearchPB.Size = new System.Drawing.Size(471, 28);
+            this.cbSearchPB.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1152, 853);
+            this.ClientSize = new System.Drawing.Size(1382, 953);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.label5);
@@ -504,6 +552,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPB)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -546,6 +597,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.ComboBox cbSearchPB;
     }
 }
 
