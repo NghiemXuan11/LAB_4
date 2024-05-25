@@ -281,19 +281,53 @@ namespace LAB_4
         //Thêm thông tin phòng ban
         private void btnThemPB_Click(object sender, EventArgs e)
         {
+            //try
+            //{
+            //    command = new SqlCommand("Insert into PHONG_BAN values (@TenPB, @SoDienThoaiPB,@DiaChiPB)", connection);
+            //    command.Parameters.AddWithValue("@TenPB", txtTenPB.Text);
+            //    command.Parameters.AddWithValue("@SoDienThoaiPB", txtDienThoaiPB.Text);
+            //    command.Parameters.AddWithValue("@DiaChiPB", txtDiaChiPB.Text);
+            //    connection.Open();
+            //    command.ExecuteNonQuery();
+            //    connection.Close();
+            //    MessageBox.Show("Thêm thành công");
+            //    Form1_Load(sender, e);
+            //}
+            //catch(Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            //finally
+            //{
+            //    connection.Close();
+            //}
             try
             {
-                command = new SqlCommand("Insert into PHONG_BAN values (@TenPB, @SoDienThoaiPB,@DiaChiPB)", connection);
-                command.Parameters.AddWithValue("@TenPB", txtTenPB.Text);
-                command.Parameters.AddWithValue("@SoDienThoaiPB", txtDienThoaiPB.Text);
-                command.Parameters.AddWithValue("@DiaChiPB", txtDiaChiPB.Text);
+                // Check for duplicate department name
+                SqlCommand checkDuplicateCommand = new SqlCommand("Select Count(*) from PHONG_BAN where TenPB = @TenPB", connection);
+                checkDuplicateCommand.Parameters.AddWithValue("@TenPB", txtTenPB.Text);
                 connection.Open();
-                command.ExecuteNonQuery();
+                int count = (int)checkDuplicateCommand.ExecuteScalar();
                 connection.Close();
-                MessageBox.Show("Thêm thành công");
-                Form1_Load(sender, e);
+
+                if (count > 0)
+                {
+                    MessageBox.Show("Tên phòng ban đã tồn tại. Vui lòng chọn tên khác.");
+                }
+                else
+                {
+                    command = new SqlCommand("Insert into PHONG_BAN values (@TenPB, @SoDienThoaiPB, @DiaChiPB)", connection);
+                    command.Parameters.AddWithValue("@TenPB", txtTenPB.Text);
+                    command.Parameters.AddWithValue("@SoDienThoaiPB", txtDienThoaiPB.Text);
+                    command.Parameters.AddWithValue("@DiaChiPB", txtDiaChiPB.Text);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("Thêm thành công");
+                    Form1_Load(sender, e);
+                }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -386,6 +420,18 @@ namespace LAB_4
                     dgvNV.DataSource = tempTable;
                 }
             }
-        } 
+        }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(txtSearch.Text == "Tìm kiếm theo Tên, Số ĐT, Địa chỉ Phòng Ban..."
+                ||  txtSearch.Text == "")
+            {
+                if (e.KeyCode == Keys.Enter) 
+                {
+                    dgvPB.DataSource = dataSet.Tables["PHONG_BAN"];
+                }
+            }
+        }
     }
 }
