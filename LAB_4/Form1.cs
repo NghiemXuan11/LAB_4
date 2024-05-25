@@ -197,19 +197,55 @@ namespace LAB_4
         //Thêm Nhân Viên
         private void btnThemNV_Click(object sender, EventArgs e)
         {
+            //try
+            //{
+            //    SqlCommand command = new SqlCommand("Insert into NHAN_VIEN values (@TenNV, @DiaChiNV, @SoDienThoaiNV, @ChucVuNV, @PhongBanID)", connection);
+            //    command.Parameters.AddWithValue("@TenNV", txtTenNV.Text);
+            //    command.Parameters.AddWithValue("@DiaChiNV", txtDiaChiNV.Text);
+            //    command.Parameters.AddWithValue("@SoDienThoaiNV", txtDienThoaiNV.Text);
+            //    command.Parameters.AddWithValue("@ChucVuNV", txtChucVu.Text);
+            //    command.Parameters.AddWithValue("@PhongBanID", cbPhongBan.SelectedValue);
+            //    connection.Open();
+            //    command.ExecuteNonQuery();
+            //    connection.Close();
+            //    MessageBox.Show("Them thanh cong");
+            //    Form1_Load(sender, e);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            //finally
+            //{
+            //    connection.Close();
+            //}
             try
             {
-                SqlCommand command = new SqlCommand("Insert into NHAN_VIEN values (@TenNV, @DiaChiNV, @SoDienThoaiNV, @ChucVuNV, @PhongBanID)", connection);
-                command.Parameters.AddWithValue("@TenNV", txtTenNV.Text);
-                command.Parameters.AddWithValue("@DiaChiNV", txtDiaChiNV.Text);
-                command.Parameters.AddWithValue("@SoDienThoaiNV", txtDienThoaiNV.Text);
-                command.Parameters.AddWithValue("@ChucVuNV", txtChucVu.Text);
-                command.Parameters.AddWithValue("@PhongBanID", cbPhongBan.SelectedValue);
+                // Check for duplicate phone number
+                SqlCommand checkDuplicateCommand = new SqlCommand("Select Count(*) from NHAN_VIEN where SoDienThoaiNV = @SoDienThoaiNV", connection);
+                checkDuplicateCommand.Parameters.AddWithValue("@SoDienThoaiNV", txtDienThoaiNV.Text);
                 connection.Open();
-                command.ExecuteNonQuery();
+                int count = (int)checkDuplicateCommand.ExecuteScalar();
                 connection.Close();
-                MessageBox.Show("Them thanh cong");
-                Form1_Load(sender, e);
+
+                if (count > 0)
+                {
+                    MessageBox.Show("Nhân viên đã tồn tại. Vui lòng nhập lại thông tin!");
+                }
+                else
+                {
+                    SqlCommand command = new SqlCommand("Insert into NHAN_VIEN values (@TenNV, @DiaChiNV, @SoDienThoaiNV, @ChucVuNV, @PhongBanID)", connection);
+                    command.Parameters.AddWithValue("@TenNV", txtTenNV.Text);
+                    command.Parameters.AddWithValue("@DiaChiNV", txtDiaChiNV.Text);
+                    command.Parameters.AddWithValue("@SoDienThoaiNV", txtDienThoaiNV.Text);
+                    command.Parameters.AddWithValue("@ChucVuNV", txtChucVu.Text);
+                    command.Parameters.AddWithValue("@PhongBanID", cbPhongBan.SelectedValue);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("Thêm thành công");
+                    Form1_Load(sender, e);
+                }
             }
             catch (Exception ex)
             {
@@ -237,7 +273,7 @@ namespace LAB_4
                 connection.Open();
                 command.ExecuteNonQuery();
                 connection.Close();
-                MessageBox.Show("Da cap nhap");
+                MessageBox.Show("Đã cập nhập");
                 Form1_Load(sender, e);
             }
             catch (Exception ex)
@@ -260,7 +296,7 @@ namespace LAB_4
                 connection.Open();
                 command.ExecuteNonQuery();
                 connection.Close();
-                MessageBox.Show("Da xoa");
+                MessageBox.Show("Đã xóa");
                 Form1_Load(sender, e);
             }
             catch (Exception ex)
@@ -418,18 +454,6 @@ namespace LAB_4
                         tempTable.ImportRow(row);
                     }
                     dgvNV.DataSource = tempTable;
-                }
-            }
-        }
-
-        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(txtSearch.Text == "Tìm kiếm theo Tên, Số ĐT, Địa chỉ Phòng Ban..."
-                ||  txtSearch.Text == "")
-            {
-                if (e.KeyCode == Keys.Enter) 
-                {
-                    dgvPB.DataSource = dataSet.Tables["PHONG_BAN"];
                 }
             }
         }
