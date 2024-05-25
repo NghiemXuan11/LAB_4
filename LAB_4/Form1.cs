@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -31,7 +32,7 @@ namespace LAB_4
         {
             InitializeComponent();
         }
-        
+
         private void Form1_Load(object sender, EventArgs e)
         {
             //Khoi tao ket noi va tao cac Adapter
@@ -54,19 +55,8 @@ namespace LAB_4
 
             fill_combobox_PB();
             fill_combobox_SearchPB();
+            fill_combobox_FilterPB();
             clear();
-            txtSearch.Text = "Tìm kiếm theo Tên, Số ĐT, Địa chỉ Phòng Ban...";
-            txtSearch.ForeColor = Color.LightGray;
-
-        }
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            TextBox txtSearch = sender as TextBox;
-            if (txtSearch != null)
-            {
-                string filterExpression = string.Format("[Tên PB] LIKE '%{0}%' OR [SĐT] LIKE '%{0}%' OR [Địa Chỉ] LIKE '%{0}%'", txtSearch.Text);
-                (dgvPB.DataSource as DataTable).DefaultView.RowFilter = filterExpression;
-            }
         }
         private void clear()
         {
@@ -112,7 +102,7 @@ namespace LAB_4
                 //Hàm thực hiện chức năng Show danh sách nhân viên thuộc 1 phòng ban
                 loadChildData(dgvPB.CurrentRow.Index);
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show("Chọn dòng không hợp lệ!");
             }
@@ -154,7 +144,7 @@ namespace LAB_4
                     dgvPB.DataSource = tempTable;
                 }
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show("Chọn dòng không hợp lệ!");
             }
@@ -169,9 +159,6 @@ namespace LAB_4
         //THẮNG
         //Thêm, Sửa, Xóa Nhân Viên
         //Xử lý combo box
-
-
-
 
         //Xý lý combo box
         private void fill_combobox_PB()
@@ -313,6 +300,7 @@ namespace LAB_4
                 connection.Close();
             }
         }
+
         //=======================================================================================//
         //Sâm
         //Thiết kế giao diện form
@@ -377,37 +365,11 @@ namespace LAB_4
                 connection.Close();
             }
         }
-        
+
         //Xử lý tìm kiếm
-        private void txtSearch_Enter(object sender, EventArgs e)
-        {
-            if (txtSearch.Text == "Tìm kiếm theo Tên, Số ĐT, Địa chỉ Phòng Ban...")
-            {
-                txtSearch.Text = "";
-                txtSearch.ForeColor = Color.Black;
-            }    
-        }
 
-        private void txtSearch_Leave(object sender, EventArgs e)
-        {
-            if (txtSearch.Text == "")
-            {
-                txtSearch.Text = "Tìm kiếm theo Tên, Số ĐT, Địa chỉ Phòng Ban...";
-                txtSearch.ForeColor = Color.LightGray;
-            }
-        }
 
-        private void txtSearch_TextChanged_1(object sender, EventArgs e)
-        {
-            txtSearch.TextChanged += new EventHandler(txtSearch_TextChanged);
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        //Tìm kiếm nhân viên theo Phòng ban
+        //Lọc nhân viên theo Phòng ban
         private void fill_combobox_SearchPB()
         {
             try
@@ -440,6 +402,10 @@ namespace LAB_4
             }
         }
 
+
+
+
+
         private void cbSearchPB_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbSearchPB.SelectedValue != null)
@@ -448,17 +414,81 @@ namespace LAB_4
                 {
                     // Hiển thị lại toàn bộ danh sách nhân viên
                     dgvNV.DataSource = dataSet.Tables["NHAN_VIEN"];
+                    int totalEmployees = dataSet.Tables["NHAN_VIEN"].Rows.Count;
+                    lblEmployeeCount.Text = totalEmployees.ToString();
                 }
                 else
                 {
                     string selectedPBID = cbSearchPB.SelectedValue.ToString();
                     DataRow[] rows = dataSet.Tables["NHAN_VIEN"].Select($"[PB_ID] = '{selectedPBID}'");
                     DataTable tempTable = dataSet.Tables["NHAN_VIEN"].Clone();
+                    int CountE = 0;
                     foreach (DataRow row in rows)
                     {
                         tempTable.ImportRow(row);
+                        CountE += 1;
                     }
+                    lblEmployeeCount.Text = CountE.ToString();
                     dgvNV.DataSource = tempTable;
+                }
+            }
+        }
+
+        //Lọc danh sách phòng ban
+        private void fill_combobox_FilterPB()
+        {
+            try
+            {
+                connection.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter("Select * from PHONG_BAN", connection);
+                DataTable table = new DataTable();
+                table.Clear();
+                adapter.Fill(table);
+                DataRow allRow = table.NewRow();
+                allRow["MaPB"] = DBNull.Value;
+                allRow["TenPB"] = "Tất cả";
+                table.Rows.InsertAt(allRow, 0);
+                cbFilterPB.DisplayMember = "TenPB";
+                cbFilterPB.ValueMember = "MaPB";
+                cbFilterPB.DataSource = table;
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        private void cbFilterPB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Lọc danh sách phòng ban theo lựa chọn trong combo box
+            if (cbFilterPB.SelectedValue == DBNull.Value)
+            {
+                dgvPB.DataSource = dataSet.Tables["PHONG_BAN"];
+            }
+            else
+            {
+                string filterValue = cbFilterPB.SelectedValue.ToString();
+                DataRow[] filteredRows = dataSet.Tables["PHONG_BAN"].Select($"[Mã PB] = '{filterValue}'");
+
+                if (filteredRows.Length > 0)
+                {
+                    DataTable tempTable = new DataTable();
+                    tempTable.Columns.Add("Mã PB", typeof(string));
+                    tempTable.Columns.Add("Tên PB", typeof(string));
+                    tempTable.Columns.Add("SĐT", typeof(string));
+                    tempTable.Columns.Add("Địa Chỉ", typeof(string));
+
+                    foreach (DataRow row in filteredRows)
+                    {
+                        tempTable.Rows.Add(row["Mã PB"], row["Tên PB"], row["SĐT"], row["Địa Chỉ"]);
+                    }
+
+                    dgvPB.DataSource = tempTable;
                 }
             }
         }
