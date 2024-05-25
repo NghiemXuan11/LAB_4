@@ -81,6 +81,8 @@ namespace LAB_4
 
             idPB = "";
             idNV = "";
+            int totalEmployees = dataSet.Tables["NHAN_VIEN"].Rows.Count;
+            lblEmployeeCount.Text = totalEmployees.ToString();
         }
 
         //Show danh sách nhân viên thuộc 1 phòng ban
@@ -94,6 +96,9 @@ namespace LAB_4
                 childTable.ImportRow(row);
             }
             dgvNV.DataSource = childTable;
+
+            //Hiển thị số lượng nhân viên thuộc phòng ban đó
+            lblEmployeeCount.Text = childRows.Length.ToString();
         }
         //Xử lý sự kiện khi click 1 dòng dữ liệu trên bảng Phòng ban
         private void dgvPB_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)

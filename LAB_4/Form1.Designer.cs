@@ -53,6 +53,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.cbSearchPB = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDiaChiPB = new System.Windows.Forms.TextBox();
@@ -60,22 +62,22 @@
             this.txtTenPB = new System.Windows.Forms.TextBox();
             this.dgvPB = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.cbSearchPB = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.lblEmployeeCount = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNV)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPB)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -139,7 +141,7 @@
             this.cbPhongBan.Location = new System.Drawing.Point(156, 167);
             this.cbPhongBan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbPhongBan.Name = "cbPhongBan";
-            this.cbPhongBan.Size = new System.Drawing.Size(398, 28);
+            this.cbPhongBan.Size = new System.Drawing.Size(350, 28);
             this.cbPhongBan.TabIndex = 7;
             // 
             // txtChucVu
@@ -147,7 +149,7 @@
             this.txtChucVu.Location = new System.Drawing.Point(156, 133);
             this.txtChucVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtChucVu.Name = "txtChucVu";
-            this.txtChucVu.Size = new System.Drawing.Size(398, 27);
+            this.txtChucVu.Size = new System.Drawing.Size(350, 27);
             this.txtChucVu.TabIndex = 6;
             // 
             // dgvNV
@@ -160,7 +162,7 @@
             this.dgvNV.Name = "dgvNV";
             this.dgvNV.RowHeadersWidth = 51;
             this.dgvNV.RowTemplate.Height = 24;
-            this.dgvNV.Size = new System.Drawing.Size(644, 327);
+            this.dgvNV.Size = new System.Drawing.Size(670, 327);
             this.dgvNV.TabIndex = 5;
             this.dgvNV.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvNV_CellMouseClick);
             // 
@@ -169,7 +171,7 @@
             this.txtDienThoaiNV.Location = new System.Drawing.Point(156, 98);
             this.txtDienThoaiNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDienThoaiNV.Name = "txtDienThoaiNV";
-            this.txtDienThoaiNV.Size = new System.Drawing.Size(398, 27);
+            this.txtDienThoaiNV.Size = new System.Drawing.Size(350, 27);
             this.txtDienThoaiNV.TabIndex = 3;
             // 
             // label2
@@ -187,7 +189,7 @@
             this.txtDiaChiNV.Location = new System.Drawing.Point(156, 63);
             this.txtDiaChiNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDiaChiNV.Name = "txtDiaChiNV";
-            this.txtDiaChiNV.Size = new System.Drawing.Size(398, 27);
+            this.txtDiaChiNV.Size = new System.Drawing.Size(350, 27);
             this.txtDiaChiNV.TabIndex = 3;
             // 
             // txtTenNV
@@ -195,7 +197,7 @@
             this.txtTenNV.Location = new System.Drawing.Point(156, 28);
             this.txtTenNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTenNV.Name = "txtTenNV";
-            this.txtTenNV.Size = new System.Drawing.Size(398, 27);
+            this.txtTenNV.Size = new System.Drawing.Size(350, 27);
             this.txtTenNV.TabIndex = 3;
             // 
             // btnXoaNV
@@ -245,7 +247,7 @@
             this.groupBox5.Controls.Add(this.label10);
             this.groupBox5.Controls.Add(this.label9);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(15, 30);
+            this.groupBox5.Location = new System.Drawing.Point(12, 30);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -290,7 +292,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(587, 9);
+            this.label5.Location = new System.Drawing.Point(561, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(224, 22);
             this.label5.TabIndex = 11;
@@ -299,7 +301,7 @@
             // btnLamMoi
             // 
             this.btnLamMoi.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnLamMoi.Location = new System.Drawing.Point(639, 766);
+            this.btnLamMoi.Location = new System.Drawing.Point(621, 768);
             this.btnLamMoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(99, 60);
@@ -353,6 +355,8 @@
             // groupBox2
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.groupBox2.Controls.Add(this.lblEmployeeCount);
+            this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.groupBox7);
             this.groupBox2.Controls.Add(this.cbPhongBan);
             this.groupBox2.Controls.Add(this.txtChucVu);
@@ -367,15 +371,34 @@
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(720, 151);
+            this.groupBox2.Location = new System.Drawing.Point(694, 151);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(650, 605);
+            this.groupBox2.Size = new System.Drawing.Size(676, 605);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách Nhân Viên";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.cbSearchPB);
+            this.groupBox7.Location = new System.Drawing.Point(8, 203);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(519, 68);
+            this.groupBox7.TabIndex = 8;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Lọc Nhân Viên theo Phòng Ban";
+            // 
+            // cbSearchPB
+            // 
+            this.cbSearchPB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSearchPB.FormattingEnabled = true;
+            this.cbSearchPB.Location = new System.Drawing.Point(20, 27);
+            this.cbSearchPB.Name = "cbSearchPB";
+            this.cbSearchPB.Size = new System.Drawing.Size(478, 28);
+            this.cbSearchPB.TabIndex = 0;
             // 
             // label13
             // 
@@ -456,6 +479,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách Phòng Ban";
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.txtSearch);
+            this.groupBox6.Location = new System.Drawing.Point(12, 171);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(504, 68);
+            this.groupBox6.TabIndex = 4;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Tìm kiếm Phòng Ban";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(12, 27);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(480, 27);
+            this.txtSearch.TabIndex = 0;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged_1);
+            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
+            this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -486,44 +529,27 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Số điện thoại:";
             // 
-            // groupBox6
+            // label14
             // 
-            this.groupBox6.Controls.Add(this.txtSearch);
-            this.groupBox6.Location = new System.Drawing.Point(12, 171);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(504, 68);
-            this.groupBox6.TabIndex = 4;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Tìm kiếm Phòng Ban";
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(519, 28);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(119, 20);
+            this.label14.TabIndex = 9;
+            this.label14.Text = "Số Lượng NV";
             // 
-            // txtSearch
+            // lblEmployeeCount
             // 
-            this.txtSearch.Location = new System.Drawing.Point(12, 27);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(480, 27);
-            this.txtSearch.TabIndex = 0;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged_1);
-            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
-            this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.cbSearchPB);
-            this.groupBox7.Location = new System.Drawing.Point(8, 203);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(556, 68);
-            this.groupBox7.TabIndex = 8;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Lọc Nhân Viên theo Phòng Ban";
-            // 
-            // cbSearchPB
-            // 
-            this.cbSearchPB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSearchPB.FormattingEnabled = true;
-            this.cbSearchPB.Location = new System.Drawing.Point(20, 27);
-            this.cbSearchPB.Name = "cbSearchPB";
-            this.cbSearchPB.Size = new System.Drawing.Size(522, 28);
-            this.cbSearchPB.TabIndex = 0;
+            this.lblEmployeeCount.AutoSize = true;
+            this.lblEmployeeCount.CausesValidation = false;
+            this.lblEmployeeCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmployeeCount.ForeColor = System.Drawing.Color.Red;
+            this.lblEmployeeCount.Location = new System.Drawing.Point(575, 57);
+            this.lblEmployeeCount.Name = "lblEmployeeCount";
+            this.lblEmployeeCount.Size = new System.Drawing.Size(0, 29);
+            this.lblEmployeeCount.TabIndex = 10;
+            this.lblEmployeeCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
@@ -549,12 +575,12 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPB)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -601,6 +627,8 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.ComboBox cbSearchPB;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblEmployeeCount;
     }
 }
 
