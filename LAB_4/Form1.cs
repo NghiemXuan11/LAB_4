@@ -250,6 +250,28 @@ namespace LAB_4
             }
         }
 
+        // Xóa Nhân Viên
+        private void btnXoaNV_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand("Delete from NHAN_VIEN where MaNV = @MaNV ", connection);
+                command.Parameters.AddWithValue("@MaNV", idNV);
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+                MessageBox.Show("Da xoa");
+                Form1_Load(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
         //=======================================================================================//
         //Sâm
         //Thiết kế giao diện form
