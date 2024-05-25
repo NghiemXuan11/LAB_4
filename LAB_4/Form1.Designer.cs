@@ -84,7 +84,7 @@
             this.groupBox3.Controls.Add(this.btnXoaPB);
             this.groupBox3.Controls.Add(this.btnSuaPB);
             this.groupBox3.Controls.Add(this.btnThemPB);
-            this.groupBox3.Location = new System.Drawing.Point(33, 807);
+            this.groupBox3.Location = new System.Drawing.Point(65, 760);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -139,7 +139,7 @@
             this.cbPhongBan.Location = new System.Drawing.Point(156, 167);
             this.cbPhongBan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbPhongBan.Name = "cbPhongBan";
-            this.cbPhongBan.Size = new System.Drawing.Size(353, 28);
+            this.cbPhongBan.Size = new System.Drawing.Size(398, 28);
             this.cbPhongBan.TabIndex = 7;
             // 
             // txtChucVu
@@ -147,7 +147,7 @@
             this.txtChucVu.Location = new System.Drawing.Point(156, 133);
             this.txtChucVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtChucVu.Name = "txtChucVu";
-            this.txtChucVu.Size = new System.Drawing.Size(353, 27);
+            this.txtChucVu.Size = new System.Drawing.Size(398, 27);
             this.txtChucVu.TabIndex = 6;
             // 
             // dgvNV
@@ -155,12 +155,12 @@
             this.dgvNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNV.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvNV.Location = new System.Drawing.Point(3, 308);
+            this.dgvNV.Location = new System.Drawing.Point(3, 276);
             this.dgvNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvNV.Name = "dgvNV";
             this.dgvNV.RowHeadersWidth = 51;
             this.dgvNV.RowTemplate.Height = 24;
-            this.dgvNV.Size = new System.Drawing.Size(554, 327);
+            this.dgvNV.Size = new System.Drawing.Size(644, 327);
             this.dgvNV.TabIndex = 5;
             this.dgvNV.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvNV_CellMouseClick);
             // 
@@ -169,7 +169,7 @@
             this.txtDienThoaiNV.Location = new System.Drawing.Point(156, 98);
             this.txtDienThoaiNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDienThoaiNV.Name = "txtDienThoaiNV";
-            this.txtDienThoaiNV.Size = new System.Drawing.Size(353, 27);
+            this.txtDienThoaiNV.Size = new System.Drawing.Size(398, 27);
             this.txtDienThoaiNV.TabIndex = 3;
             // 
             // label2
@@ -187,7 +187,7 @@
             this.txtDiaChiNV.Location = new System.Drawing.Point(156, 63);
             this.txtDiaChiNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDiaChiNV.Name = "txtDiaChiNV";
-            this.txtDiaChiNV.Size = new System.Drawing.Size(353, 27);
+            this.txtDiaChiNV.Size = new System.Drawing.Size(398, 27);
             this.txtDiaChiNV.TabIndex = 3;
             // 
             // txtTenNV
@@ -195,7 +195,7 @@
             this.txtTenNV.Location = new System.Drawing.Point(156, 28);
             this.txtTenNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTenNV.Name = "txtTenNV";
-            this.txtTenNV.Size = new System.Drawing.Size(353, 27);
+            this.txtTenNV.Size = new System.Drawing.Size(398, 27);
             this.txtTenNV.TabIndex = 3;
             // 
             // btnXoaNV
@@ -245,11 +245,11 @@
             this.groupBox5.Controls.Add(this.label10);
             this.groupBox5.Controls.Add(this.label9);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(9, 52);
+            this.groupBox5.Location = new System.Drawing.Point(15, 30);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox5.Size = new System.Drawing.Size(388, 118);
+            this.groupBox5.Size = new System.Drawing.Size(353, 117);
             this.groupBox5.TabIndex = 12;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Thành viên nhóm";
@@ -290,7 +290,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(469, 30);
+            this.label5.Location = new System.Drawing.Point(587, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(224, 22);
             this.label5.TabIndex = 11;
@@ -299,7 +299,7 @@
             // btnLamMoi
             // 
             this.btnLamMoi.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnLamMoi.Location = new System.Drawing.Point(640, 815);
+            this.btnLamMoi.Location = new System.Drawing.Point(639, 766);
             this.btnLamMoi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(99, 60);
@@ -314,7 +314,7 @@
             this.groupBox4.Controls.Add(this.btnXoaNV);
             this.groupBox4.Controls.Add(this.btnSuaNV);
             this.groupBox4.Controls.Add(this.btnThemNV);
-            this.groupBox4.Location = new System.Drawing.Point(845, 807);
+            this.groupBox4.Location = new System.Drawing.Point(792, 758);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -367,11 +367,11 @@
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(813, 147);
+            this.groupBox2.Location = new System.Drawing.Point(720, 151);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(560, 637);
+            this.groupBox2.Size = new System.Drawing.Size(650, 605);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách Nhân Viên";
@@ -426,12 +426,12 @@
             this.dgvPB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPB.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvPB.Location = new System.Drawing.Point(3, 264);
+            this.dgvPB.Location = new System.Drawing.Point(3, 276);
             this.dgvPB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvPB.Name = "dgvPB";
             this.dgvPB.RowHeadersWidth = 51;
             this.dgvPB.RowTemplate.Height = 24;
-            this.dgvPB.Size = new System.Drawing.Size(584, 327);
+            this.dgvPB.Size = new System.Drawing.Size(644, 327);
             this.dgvPB.TabIndex = 2;
             this.dgvPB.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPB_CellMouseClick);
             // 
@@ -447,11 +447,11 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(9, 191);
+            this.groupBox1.Location = new System.Drawing.Point(12, 151);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(590, 593);
+            this.groupBox1.Size = new System.Drawing.Size(650, 605);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách Phòng Ban";
@@ -509,9 +509,9 @@
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.cbSearchPB);
-            this.groupBox7.Location = new System.Drawing.Point(12, 215);
+            this.groupBox7.Location = new System.Drawing.Point(8, 203);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(497, 68);
+            this.groupBox7.Size = new System.Drawing.Size(556, 68);
             this.groupBox7.TabIndex = 8;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Lọc Nhân Viên theo Phòng Ban";
@@ -522,14 +522,14 @@
             this.cbSearchPB.FormattingEnabled = true;
             this.cbSearchPB.Location = new System.Drawing.Point(20, 27);
             this.cbSearchPB.Name = "cbSearchPB";
-            this.cbSearchPB.Size = new System.Drawing.Size(471, 28);
+            this.cbSearchPB.Size = new System.Drawing.Size(522, 28);
             this.cbSearchPB.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1382, 953);
+            this.ClientSize = new System.Drawing.Size(1382, 917);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.label5);
