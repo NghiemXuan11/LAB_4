@@ -618,7 +618,7 @@ namespace LAB_4
                 connection.Open();
                 command.ExecuteNonQuery();
                 connection.Close();
-                MessageBox.Show("Da xoa");
+                MessageBox.Show("Xóa thành công!");
                 Form1_Load(sender, e);
             }
             catch (Exception ex)
