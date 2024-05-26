@@ -251,22 +251,60 @@ namespace LAB_4
         // Sửa Nhân Viên
         private void btnSuaNV_Click(object sender, EventArgs e)
         {
+            //try
+            //{
+            //    SqlCommand command = new SqlCommand("Update NHAN_VIEN set TenNV = @TenNV, DiaChiNV = @DiaChiNV, SoDienThoaiNV = @SoDienThoaiNV, ChucVuNV = @ChucVuNV, PhongBanID = @PhongBanID where MaNV = @MaNV ", connection);
+            //    //id missing
+            //    command.Parameters.AddWithValue("@MaNV", idNV);
+            //    command.Parameters.AddWithValue("@TenNV", txtTenNV.Text);
+            //    command.Parameters.AddWithValue("@DiaChiNV", txtDiaChiNV.Text);
+            //    command.Parameters.AddWithValue("@SoDienThoaiNV", txtDienThoaiNV.Text);
+            //    command.Parameters.AddWithValue("@ChucVuNV", txtChucVu.Text);
+            //    command.Parameters.AddWithValue("@PhongBanID", cbPhongBan.SelectedValue);
+            //    //Phong Ban
+            //    connection.Open();
+            //    command.ExecuteNonQuery();
+            //    connection.Close();
+            //    MessageBox.Show("Đã cập nhập");
+            //    Form1_Load(sender, e);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            //finally
+            //{
+            //    connection.Close();
+            //}
             try
             {
-                SqlCommand command = new SqlCommand("Update NHAN_VIEN set TenNV = @TenNV, DiaChiNV = @DiaChiNV, SoDienThoaiNV = @SoDienThoaiNV, ChucVuNV = @ChucVuNV, PhongBanID = @PhongBanID where MaNV = @MaNV ", connection);
-                //id missing
-                command.Parameters.AddWithValue("@MaNV", idNV);
-                command.Parameters.AddWithValue("@TenNV", txtTenNV.Text);
-                command.Parameters.AddWithValue("@DiaChiNV", txtDiaChiNV.Text);
-                command.Parameters.AddWithValue("@SoDienThoaiNV", txtDienThoaiNV.Text);
-                command.Parameters.AddWithValue("@ChucVuNV", txtChucVu.Text);
-                command.Parameters.AddWithValue("@PhongBanID", cbPhongBan.SelectedValue);
-                //Phong Ban
+                // Check for duplicate phone number, excluding the current employee
+                SqlCommand checkDuplicateCommand = new SqlCommand("Select Count(*) from NHAN_VIEN where SoDienThoaiNV = @SoDienThoaiNV and MaNV != @MaNV", connection);
+                checkDuplicateCommand.Parameters.AddWithValue("@SoDienThoaiNV", txtDienThoaiNV.Text);
+                checkDuplicateCommand.Parameters.AddWithValue("@MaNV", idNV);
                 connection.Open();
-                command.ExecuteNonQuery();
+                int count = (int)checkDuplicateCommand.ExecuteScalar();
                 connection.Close();
-                MessageBox.Show("Đã cập nhập");
-                Form1_Load(sender, e);
+
+                if (count > 0)
+                {
+                    MessageBox.Show("Nhân viên đã tồn tại. Vui lòng nhập lại thông tin.");
+                }
+                else
+                {
+                    SqlCommand command = new SqlCommand("Update NHAN_VIEN set TenNV = @TenNV, DiaChiNV = @DiaChiNV, SoDienThoaiNV = @SoDienThoaiNV, ChucVuNV = @ChucVuNV, PhongBanID = @PhongBanID where MaNV = @MaNV", connection);
+                    command.Parameters.AddWithValue("@MaNV", idNV);
+                    command.Parameters.AddWithValue("@TenNV", txtTenNV.Text);
+                    command.Parameters.AddWithValue("@DiaChiNV", txtDiaChiNV.Text);
+                    command.Parameters.AddWithValue("@SoDienThoaiNV", txtDienThoaiNV.Text);
+                    command.Parameters.AddWithValue("@ChucVuNV", txtChucVu.Text);
+                    command.Parameters.AddWithValue("@PhongBanID", cbPhongBan.SelectedValue);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("Đã cập nhật thành công.");
+                    Form1_Load(sender, e);
+                }
             }
             catch (Exception ex)
             {
@@ -276,6 +314,7 @@ namespace LAB_4
             {
                 connection.Close();
             }
+
         }
 
         // Xóa Nhân Viên
