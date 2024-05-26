@@ -565,5 +565,27 @@ namespace LAB_4
                 connection.Close();
             }
         }
+
+        private void btnXoaPB_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand("Delete from PHONG_BAN where MaPB = @MaPB ", connection);
+                command.Parameters.AddWithValue("@MaPB", idPB);
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+                MessageBox.Show("Da xoa");
+                Form1_Load(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
 }

@@ -107,6 +107,7 @@
             this.btnXoaPB.TabIndex = 15;
             this.btnXoaPB.Text = "Xóa";
             this.btnXoaPB.UseVisualStyleBackColor = true;
+            this.btnXoaPB.Click += new System.EventHandler(this.btnXoaPB_Click);
             // 
             // btnSuaPB
             // 
