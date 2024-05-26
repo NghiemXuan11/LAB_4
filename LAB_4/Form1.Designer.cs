@@ -100,13 +100,16 @@
             this.btnXoaPB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXoaPB.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnXoaPB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoaPB.ForeColor = System.Drawing.Color.White;
             this.btnXoaPB.Location = new System.Drawing.Point(261, 17);
             this.btnXoaPB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnXoaPB.Name = "btnXoaPB";
             this.btnXoaPB.Size = new System.Drawing.Size(74, 28);
             this.btnXoaPB.TabIndex = 15;
             this.btnXoaPB.Text = "Xóa";
-            this.btnXoaPB.UseVisualStyleBackColor = true;
+            this.btnXoaPB.UseVisualStyleBackColor = false;
             this.btnXoaPB.Click += new System.EventHandler(this.btnXoaPB_Click);
             // 
             // btnSuaPB
@@ -114,13 +117,16 @@
             this.btnSuaPB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSuaPB.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnSuaPB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSuaPB.ForeColor = System.Drawing.Color.White;
             this.btnSuaPB.Location = new System.Drawing.Point(142, 17);
             this.btnSuaPB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSuaPB.Name = "btnSuaPB";
             this.btnSuaPB.Size = new System.Drawing.Size(74, 28);
             this.btnSuaPB.TabIndex = 14;
             this.btnSuaPB.Text = "Sửa";
-            this.btnSuaPB.UseVisualStyleBackColor = true;
+            this.btnSuaPB.UseVisualStyleBackColor = false;
             this.btnSuaPB.Click += new System.EventHandler(this.btnSuaPB_Click);
             // 
             // btnThemPB
@@ -128,13 +134,16 @@
             this.btnThemPB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThemPB.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnThemPB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemPB.ForeColor = System.Drawing.Color.White;
             this.btnThemPB.Location = new System.Drawing.Point(22, 17);
             this.btnThemPB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnThemPB.Name = "btnThemPB";
             this.btnThemPB.Size = new System.Drawing.Size(74, 28);
             this.btnThemPB.TabIndex = 13;
             this.btnThemPB.Text = "Thêm";
-            this.btnThemPB.UseVisualStyleBackColor = true;
+            this.btnThemPB.UseVisualStyleBackColor = false;
             this.btnThemPB.Click += new System.EventHandler(this.btnThemPB_Click);
             // 
             // cbPhongBan
@@ -209,26 +218,32 @@
             this.btnXoaNV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXoaNV.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnXoaNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoaNV.ForeColor = System.Drawing.Color.White;
             this.btnXoaNV.Location = new System.Drawing.Point(268, 17);
             this.btnXoaNV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnXoaNV.Name = "btnXoaNV";
             this.btnXoaNV.Size = new System.Drawing.Size(74, 28);
             this.btnXoaNV.TabIndex = 19;
             this.btnXoaNV.Text = "Xóa";
-            this.btnXoaNV.UseVisualStyleBackColor = true;
+            this.btnXoaNV.UseVisualStyleBackColor = false;
             // 
             // btnSuaNV
             // 
             this.btnSuaNV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSuaNV.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnSuaNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSuaNV.ForeColor = System.Drawing.Color.White;
             this.btnSuaNV.Location = new System.Drawing.Point(149, 17);
             this.btnSuaNV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSuaNV.Name = "btnSuaNV";
             this.btnSuaNV.Size = new System.Drawing.Size(74, 28);
             this.btnSuaNV.TabIndex = 18;
             this.btnSuaNV.Text = "Sửa";
-            this.btnSuaNV.UseVisualStyleBackColor = true;
+            this.btnSuaNV.UseVisualStyleBackColor = false;
             this.btnSuaNV.Click += new System.EventHandler(this.btnSuaNV_Click);
             // 
             // btnThemNV
@@ -236,13 +251,16 @@
             this.btnThemNV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThemNV.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnThemNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemNV.ForeColor = System.Drawing.Color.White;
             this.btnThemNV.Location = new System.Drawing.Point(30, 17);
             this.btnThemNV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnThemNV.Name = "btnThemNV";
             this.btnThemNV.Size = new System.Drawing.Size(74, 28);
             this.btnThemNV.TabIndex = 17;
             this.btnThemNV.Text = "Thêm";
-            this.btnThemNV.UseVisualStyleBackColor = true;
+            this.btnThemNV.UseVisualStyleBackColor = false;
             this.btnThemNV.Click += new System.EventHandler(this.btnThemNV_Click);
             // 
             // groupBox5
