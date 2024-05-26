@@ -17,7 +17,7 @@ Công ty A cần lưu thông tin của PHÒNG BAN (bao gồm mã phòng ban, Tê
 
 * OS: Windows 10, 11
 * IDE: Microsoft Visual Studio 2022
-* Ngôn ngữ lập trình: C#
+* Ngôn ngữ lập trình: C#, Winform
 * FrameWork: .NET Framework 4.8.1
 
 ### Cài đặt
@@ -31,9 +31,11 @@ Công ty A cần lưu thông tin của PHÒNG BAN (bao gồm mã phòng ban, Tê
 
 * Trên màn hình giao diện sẽ bao gồm các chức năng sau:<br>
   - Thêm, sửa, xóa phòng ban.<br>
-  - Thêm, sửa, xoa nhân viên.<br>
-  - Show toàn bộ nhân viên thuộc 1 phòng ban khi click vào dòng dữ liệu bảng phòng ban.<br>
+  - Thêm, sửa, xóa nhân viên.<br>
+  - Show số lượng nhân viên và danh sách toàn bộ nhân viên thuộc 1 phòng ban khi click vào dòng dữ liệu bảng phòng ban.<br>
   - Show phòng ban mà nhân viên bất kì thuộc về khi click vào dòng dữ liệu bảng nhân viên.<br>
+  - Tìm kiếm Phòng Ban
+  - Tìm kiếm Nhân Viên theo Phòng Ban
   - Chức năng làm mới (Refresh) giúp thiết lập dữ liệu về trạng thái ban đầu.<br>
   
 ## Thành viên nhóm
