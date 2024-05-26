@@ -366,9 +366,18 @@ namespace LAB_4
             }
         }
 
-        //Xử lý tìm kiếm
+        //Sửa thông tin phòng ban
 
 
+
+
+
+        //Xóa thông tin phòng ban
+
+
+        
+        
+        
         //Lọc nhân viên theo Phòng ban
         private void fill_combobox_SearchPB()
         {
