@@ -540,5 +540,30 @@ namespace LAB_4
                 }
             }
         }
+
+        private void btnSuaPB_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand("Update PHONG_BAN set TenPB = @TenPB, SoDienThoaiPB = @SoDienThoaiPB, DiaChiPB = @DiaChiPB where MaPB = @MaPB ", connection);
+                command.Parameters.AddWithValue("@MaPB", idPB);
+                command.Parameters.AddWithValue("@TenPB", txtTenPB.Text);
+                command.Parameters.AddWithValue("@SoDienThoaiPB", txtDienThoaiPB.Text);
+                command.Parameters.AddWithValue("@DiaChiPB", txtDiaChiPB.Text);
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+                MessageBox.Show("Da cap nhap");
+                Form1_Load(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
 }
