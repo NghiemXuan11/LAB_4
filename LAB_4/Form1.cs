@@ -543,18 +543,61 @@ namespace LAB_4
 
         private void btnSuaPB_Click(object sender, EventArgs e)
         {
+            //try
+            //{
+            //    SqlCommand command = new SqlCommand("Update PHONG_BAN set TenPB = @TenPB, SoDienThoaiPB = @SoDienThoaiPB, DiaChiPB = @DiaChiPB where MaPB = @MaPB ", connection);
+            //    command.Parameters.AddWithValue("@MaPB", idPB);
+            //    command.Parameters.AddWithValue("@TenPB", txtTenPB.Text);
+            //    command.Parameters.AddWithValue("@SoDienThoaiPB", txtDienThoaiPB.Text);
+            //    command.Parameters.AddWithValue("@DiaChiPB", txtDiaChiPB.Text);
+            //    connection.Open();
+            //    command.ExecuteNonQuery();
+            //    connection.Close();
+            //    MessageBox.Show("Da cap nhap");
+            //    Form1_Load(sender, e);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            //finally
+            //{
+            //    connection.Close();
+            //}
             try
             {
-                SqlCommand command = new SqlCommand("Update PHONG_BAN set TenPB = @TenPB, SoDienThoaiPB = @SoDienThoaiPB, DiaChiPB = @DiaChiPB where MaPB = @MaPB ", connection);
-                command.Parameters.AddWithValue("@MaPB", idPB);
-                command.Parameters.AddWithValue("@TenPB", txtTenPB.Text);
-                command.Parameters.AddWithValue("@SoDienThoaiPB", txtDienThoaiPB.Text);
-                command.Parameters.AddWithValue("@DiaChiPB", txtDiaChiPB.Text);
+                // Check if the new department name already exists in the database, excluding the current department
+                SqlCommand checkDuplicateCommand = new SqlCommand(
+                    "Select Count(*) from PHONG_BAN where TenPB = @TenPB and MaPB != @MaPB",
+                    connection
+                );
+                checkDuplicateCommand.Parameters.AddWithValue("@TenPB", txtTenPB.Text);
+                checkDuplicateCommand.Parameters.AddWithValue("@MaPB", idPB);
                 connection.Open();
-                command.ExecuteNonQuery();
+                int count = (int)checkDuplicateCommand.ExecuteScalar();
                 connection.Close();
-                MessageBox.Show("Da cap nhap");
-                Form1_Load(sender, e);
+
+                if (count > 0)
+                {
+                    MessageBox.Show("Tên phòng ban đã tồn tại. Vui lòng chọn tên khác.");
+                }
+                else
+                {
+                    // Proceed with the update if no duplicate name is found
+                    SqlCommand command = new SqlCommand(
+                        "Update PHONG_BAN set TenPB = @TenPB, SoDienThoaiPB = @SoDienThoaiPB, DiaChiPB = @DiaChiPB where MaPB = @MaPB",
+                        connection
+                    );
+                    command.Parameters.AddWithValue("@MaPB", idPB);
+                    command.Parameters.AddWithValue("@TenPB", txtTenPB.Text);
+                    command.Parameters.AddWithValue("@SoDienThoaiPB", txtDienThoaiPB.Text);
+                    command.Parameters.AddWithValue("@DiaChiPB", txtDiaChiPB.Text);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("Đã cập nhật thành công.");
+                    Form1_Load(sender, e);
+                }
             }
             catch (Exception ex)
             {
